@@ -1,0 +1,19 @@
+<p>property-binding works!</p>
+
+<!-- when we have bind a dynamic data to any 
+    html attribute/directive/custom Attribute -->
+    <!-- syntax => [html attribute/directive/custom Attribute]="PropertyName" -->
+
+<input type="text" [value]="name"> <br><br>
+<img id="myimg" [src]="imgUrl" alt=""> 
+<hr>
+<h2>Difference Between Property binding VS String Interpolation</h2>
+
+<div hidden=" {{ishidden}} ">
+  <h2>Apply String Interpolation </h2> 
+</div> <br><br>
+
+
+<div [hidden]="ishidden">
+    <h2>Apply Property Binding </h2> 
+  </div>
