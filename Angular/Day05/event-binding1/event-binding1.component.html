@@ -1,0 +1,17 @@
+<p>event-binding1 works!</p>
+
+<!-- click => Event  -->
+
+<button (click)="onClick()" >
+    Send</button> <br><br>
+
+<img src="../../assets/bg.jpeg"
+ alt="" (click)="onImageClick()" >
+ <hr>
+
+ <!-- $event => It is special variable given by the angular
+    it gives current DOM element Information.Basically it is a object
+-->
+<button (click)="OnClick1($event)"
+value="Doller Event"
+>SUBMIT</button>
