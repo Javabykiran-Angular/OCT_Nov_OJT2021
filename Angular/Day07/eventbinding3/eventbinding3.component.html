@@ -1,0 +1,22 @@
+<p>eventbinding3 works!</p>
+
+<!-- //keyup event  -->
+
+<input type="text" (keyup)="onKeyUp()"
+placeholder="Enter the name" > <br><br>
+
+<input type="text" (keydown)="onKeyDown()"
+placeholder="Enter the name"> <hr>
+
+<button (click)="result=2+2">Addition</button> 
+<br>
+<h2> Result is :: {{result}} </h2> <hr>
+ <!-- two way binding -->
+<!-- syntax =>  -->
+    <!-- ngModel=> we use one notation 
+        [()]
+    -->
+
+    <input type="text" [(ngModel)]="name"
+    placeholder="Enter the Name"> <br>
+    {{name}}

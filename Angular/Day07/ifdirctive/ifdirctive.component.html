@@ -1,0 +1,23 @@
+<p>ifdirctive works!</p>
+
+<!-- structral directive 
+    u can manipulate/change ur dom structure behaviour
+    1 *ngIf
+    2 *ngFor
+    3 *ngSwitch
+-->
+<div *ngIf="rating<4" >
+        <h2>Condition is true</h2>
+</div>
+<hr>
+<div *ngIf="rating1<4; else myelsepart" >
+    <h2>Condition is true.....</h2>
+</div>
+
+<!-- <div #myelsepart>
+    <h2>Condition is false </h2>
+</div> -->
+
+<ng-template #myelsepart>
+    <h2>Condition is false </h2>
+</ng-template>
