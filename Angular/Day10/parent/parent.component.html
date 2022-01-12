@@ -1,0 +1,22 @@
+<p>parent works!</p>
+
+<h3>Data from Child :: {{StrReceivedData}} </h3>
+
+<h4>ID:: {{JsonReceivedData.id}} </h4>
+<h4>Name:: {{JsonReceivedData.name}} </h4>
+<h4>Status :: {{JsonReceivedData.status}} </h4>
+
+
+<hr>
+<!-- <app-child1 [ParentStrData]="strData"
+    [ParentJsonData]="jsonObj"
+>
+</app-child1> -->
+
+<app-child2 
+(ChildStrEvent)="StrReceivedData=$event"
+(ChildJsonEvent)="JsonReceivedData=$event"
+>
+
+
+</app-child2>
