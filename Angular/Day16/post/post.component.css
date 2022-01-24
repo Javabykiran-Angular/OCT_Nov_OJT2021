@@ -1,0 +1,23 @@
+
+button{
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid springgreen;
+  border-radius: 8px;
+}
+
+button:hover{
+  background-color: green;
+  color: white;
+}
+
+input{
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid springgreen;
+  
+}
+input:hover{
+  border: 2px solid blue;
+  
+}
