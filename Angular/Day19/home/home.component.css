@@ -1,0 +1,10 @@
+
+a{
+  margin: 8px;
+}
+button{
+  margin: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
