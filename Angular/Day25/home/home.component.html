@@ -1,0 +1,43 @@
+
+<div class="container-fluid">
+  <app-header></app-header>
+
+  <div class="row">
+    <div class="col">
+
+
+<br>
+      <table class="table table-bordered table-hover">
+        <thead>
+            <th>#</th>
+        
+            <th>Name</th>
+            <th>Department</th>
+            <th>status</th>
+            <th>Creatated Date</th>
+            <th>Updatated Date</th>
+            <th>Country</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of EmpData;index as i">
+                <td> {{i+1}} </td>
+
+               
+
+                <td> {{item.name}}  </td>
+                <td> {{item.departmentit}} </td>
+                <td>{{item.status}} </td>
+                <td> {{item.createddtm | date}} </td>
+                <td> {{item.updateddtm | date:'dd-MM-yyyy'}} </td>
+                <td> {{item.country.cname}} </td>
+              
+            </tr>
+        </tbody>
+    </table>
+   
+
+    </div>
+
+  </div>
+
+</div>
