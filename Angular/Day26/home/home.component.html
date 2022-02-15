@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+  <app-header></app-header>
+
+  <div class="row">
+    <div class="col">
+
+
+<br>
+      <table class="table table-bordered table-hover">
+        <thead>
+            <th>#</th>
+        
+            <th>Name</th>
+            <th>Department</th>
+            <th>status</th>
+            <th>Creatated Date</th>
+            <th>Updatated Date</th>
+            <th>Country</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of EmpData;index as i">
+                <td> {{i+1}} </td>
+
+               
+
+                <td> <a [routerLink]="['/EmpDetails',item.id]"> {{item.name}} </a> </td>
+                <td> {{item.departmentit}} </td>
+                <td> <h5 style="text-align: center;">
+                  <span style="padding: 8px;" 
+                    [ngClass]="{
+                      'badge':true,
+                      'badge-pill':true,
+                      'badge-success':item.status=='Active',
+                      'badge-danger' : item.status=='suspend',
+                      'badge-warning':item.status=='Inactive'
+                    }"
+                  > {{item.status}} </span></h5> </td>
+                <td> {{item.createddtm | date}} </td>
+                <td> {{item.updateddtm | date:'dd-MM-yyyy'}} </td>
+                <td> {{item.country.cname}} </td>
+              
+            </tr>
+        </tbody>
+    </table>
+   
+
+    </div>
+
+  </div>
+
+</div>
