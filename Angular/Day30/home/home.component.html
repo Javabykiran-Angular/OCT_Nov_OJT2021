@@ -1,0 +1,66 @@
+
+<div class="container-fluid">
+  <app-header></app-header>
+<br>
+  <div class="row">
+    <div class="col">
+      <div>
+          <button routerLink="/addemployee" class="btn btn-success">Add Employee</button>
+          <button class="btn btn-warning" 
+          (click)="OpenPopUp(popUp)">Update Employee</button>
+
+          <button (click)="onDelete()" class="btn btn-danger">Delete Employee</button>
+      </div>
+
+      <ng-template #popUp >
+     <app-update-employee [parentdata]="empobj" ></app-update-employee>
+
+       <button (click)="modalRef.hide()" class="btn btn-danger">Cancel</button>
+     </ng-template>
+
+<br>
+      <table class="table table-bordered table-hover">
+        <thead>
+            <th>#</th>
+            <th>Action</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>status</th>
+            <th>Creatated Date</th>
+            <th>Updatated Date</th>
+            <th>Country</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of EmpData | paginate: { itemsPerPage: 5, currentPage: p } ;index as i">
+                <td> {{i+1}} </td>
+
+               <td> <input type="radio" (click)="onRadioClick(item)" name="record"> </td>
+
+                <td> <a [routerLink]="['/EmpDetails',item.id]"> {{item.name}} </a> </td>
+                <td> {{item.departmentit}} </td>
+                <td> <h5 style="text-align: center;">
+                  <span [title]="status_tooltip"  style="padding: 8px;" 
+                    (mouseover)="onMouseOver(item)"
+                    [ngClass]="{
+                      'badge':true,
+                      'badge-pill':true,
+                      'badge-success':item.status=='Active',
+                      'badge-danger' : item.status=='suspend',
+                      'badge-warning':item.status=='Inactive'
+                    }"
+                  > {{item.status}} </span></h5> </td>
+                <td> {{item.createddtm | date}} </td>
+                <td> {{item.updateddtm | date:'dd-MM-yyyy'}} </td>
+                <td> {{item.country.cname}} </td>
+              
+            </tr>
+        </tbody>
+    </table>
+    <!-- <pagination-controls (pageChange)="p = $event" class="pull-right"></pagination-controls> -->
+    <pagination-controls (pageChange)="p = $event" style="float: right;"></pagination-controls>
+
+    </div>
+
+  </div>
+
+</div>
